@@ -1,3 +1,3 @@
 <template>
-  <div>test drugi</div>
+  <div>test drugi a</div>
 </template>
