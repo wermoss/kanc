@@ -10,7 +10,7 @@ export default {
     anime({
       targets: '#animated-square',
       width: ['100px', '400px'], // zmienia kwadrat w prostokąt
-      duration: 1000, // czas trwania animacji w milisekundach
+      duration: 500, // czas trwania animacji w milisekundach
       easing: 'easeInOutSine', // typ easingu
     })
 
@@ -19,10 +19,10 @@ export default {
         targets: '#animated-square',
         width: ['400px', '0px'], // zmniejsza prostokąt do zera
         translateX: ['0px', '400px'], // przesuwa element w prawo
-        duration: 1000, // czas trwania animacji w milisekundach
+        duration: 500, // czas trwania animacji w milisekundach
         easing: 'easeInOutSine', // typ easingu
       })
-    }, 1000)
+    }, 500)
   },
 }
 </script>
