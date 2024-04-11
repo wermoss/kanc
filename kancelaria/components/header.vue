@@ -3,7 +3,8 @@
         <div class="max-w-screen-2xl w-full">
                 <div class="container mx-auto text-white p-4 flex justify-between">
                     <div class="">Logo Here</div>
-                    <div class="">
+                    <div class="md:hidden"><Menu /></div>
+                    <div class="hidden md:block">
                         <ul class="flex gap-4">
                             <li>
                                 Home
@@ -21,4 +22,5 @@
                     </div>
                 </div>
         </div>
-    </div></template>
+    </div>
+</template>
