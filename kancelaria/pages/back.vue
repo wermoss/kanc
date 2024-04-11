@@ -10,6 +10,7 @@
     </div>
     <div>Sekcja korzyści</div>
     <Modal />
+    <div class="flex"><Menu /></div>
 </template>
 
 <script></script>
