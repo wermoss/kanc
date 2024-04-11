@@ -1,9 +1,12 @@
 <template>
     <div class="w-screen bg-green-100 flex items-center justify-center">
-        <div class="max-w-screen-2xl h-screen bg-pink-100 bg-no-repeat bg-center	bg-cover bg-[url('https://www.lubinandmeyer.com/proto/images/lubin-courtroom.jpg')]">
-            aaa fgdgdsg sdfgd fdsg fdsg fdg dfg df gdf gdf gdf gsd fdsf sdfs dfsd fsd fsd fds fsd fsd fsd fsd fsd fsd fsd fsd ff gdfg dfg dsfgsd gdfgdf gdfg fdsg dsg dsg df gdf gdf gdf gsdfg dfgd gdfsg 
+        <div class="max-w-screen-2xl w-full bg-pink-100 bg-no-repeat bg-center bg-cover bg-[url('https://www.lubinandmeyer.com/proto/images/lubin-courtroom.jpg')]">
+            <div class="bg-black/50 h-screen">
+                <div class="container mx-auto text-white p-20">Kancelara adwokacka</div>
+            </div>
         </div>
     </div>
+    <div>Sekcja korzyści</div>
 </template>
 
 <script></script>

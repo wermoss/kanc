@@ -1,3 +1,3 @@
 <template>
-<div>H</div>
+<div>Header</div>
 </template>
