@@ -13,7 +13,7 @@
             <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-sm dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
               +48
             </span>
-            <input type="text" v-model="phoneNumber" @input="validateInput" maxlength="9" class="rounded-none rounded-e-sm bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="450 066 055">
+            <input type="tel" v-model="phoneNumber" @input="validateInput" maxlength="9" pattern="\d{9}" class="rounded-none rounded-e-sm bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="450 066 055">
           </div>
           <button :disabled="phoneNumber.length !== 9" :class="{ 'opacity-50': phoneNumber.length !== 9 }" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Zamów rozmowę</button>
           <p>Numer telefony będzie przetworzony jednorazowo wyłacznie w celu realizacji połaczenia</p>
