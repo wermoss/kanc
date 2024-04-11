@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div @click="openModal" class="w-14 h-14 cursor-pointer	 bg-black rounded-full items-center justify-center flex fixed bottom-10 right-10">
+    <div @click="openModal" class="w-16 h-16 cursor-pointer	 bg-black rounded-full items-center justify-center flex fixed bottom-10 right-10">
       <img src="/src/phone.svg" alt="Zamknij" class="w-6 h-6""/>
     </div>
     <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center" style="display: none;">
