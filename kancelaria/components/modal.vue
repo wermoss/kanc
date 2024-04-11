@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button @click="openModal" class="bg-red-500 text-white px-4 py-2 rounded">Otwórz modal</button>
+    <div @click="openModal" class="w-16 h-16 cursor-pointer	 bg-green-200 rounded-full items-center justify-center flex fixed bottom-10 right-10">
+      <img src="/src/phone.svg" alt="Zamknij" class="w-8 h-8" />
+    </div>
     <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center" style="display: none;">
       <div ref="modalBox" class="max-w-md bg-white p-10 mx-6 rounded flex flex-col bottom-0 transform translate-y-full ">
         <div @click="closeModal" class="cursor-pointer justify-end flex">
@@ -38,7 +40,7 @@ const openModal = () => {
   document.body.classList.add('overflow-hidden')
   anime({
     targets: modalBg.value,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
     duration: 500,
     easing: 'linear'
   })
