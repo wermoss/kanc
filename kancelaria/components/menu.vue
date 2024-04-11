@@ -1,86 +1,109 @@
 <template>
-  <div>
-    <div @click="toggleMenu" class="hamburger">
-      <div class="bar bar1"></div>
-      <div class="bar bar2"></div>
-      <div class="bar bar3"></div>
+  <div class="hamburger hamburger--elastic" @click="toggleMenu" :class="{ 'is-active': menuOpen }">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import anime from 'animejs'
 
 let menuOpen = ref(false)
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
-
-  if (menuOpen.value) {
-    anime({
-      targets: '.bar1',
-      rotate: 45,
-      translateY: 10,
-      width: '40px',
-      duration: 500,
-      easing: 'easeInOutQuad'
-    })
-    anime({
-      targets: '.bar2',
-      opacity: 0,
-      duration: 500,
-      easing: 'easeInOutQuad'
-    })
-    anime({
-      targets: '.bar3',
-      rotate: -45,
-      translateY: -10,
-      width: '40px',
-      duration: 500,
-      easing: 'easeInOutQuad'
-    })
-  } else {
-    anime({
-      targets: '.bar1',
-      rotate: 0,
-      translateY: 0,
-      width: '35px',
-      duration: 500,
-      easing: 'easeInOutQuad'
-    })
-    anime({
-      targets: '.bar2',
-      opacity: 1,
-      duration: 500,
-      easing: 'easeInOutQuad'
-    })
-    anime({
-      targets: '.bar3',
-      rotate: 0,
-      translateY: 0,
-      width: '35px',
-      duration: 500,
-      easing: 'easeInOutQuad'
-    })
-  }
 }
 </script>
 
 <style scoped>
 .hamburger {
+  padding: 15px 15px;
+  display: inline-block;
   cursor: pointer;
-  width: 35px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
 }
 
-.bar {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  transition: 0.4s;
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger--elastic .hamburger-inner {
+  top: 2px;
+  transition-duration: 0.275s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.hamburger--elastic .hamburger-inner::before {
+  top: 10px;
+  transition: opacity 0.125s 0.275s ease;
+}
+.hamburger--elastic .hamburger-inner::after {
+  top: 20px;
+  transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(135deg);
+  transition-delay: 0.075s;
+}
+.hamburger--elastic.is-active .hamburger-inner::before {
+  transition-delay: 0s;
+  opacity: 0;
+}
+.hamburger--elastic.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-270deg);
+  transition-delay: 0.075s;
 }
 </style>
