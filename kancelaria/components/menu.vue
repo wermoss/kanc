@@ -1,8 +1,11 @@
 <template>
-  <div class="hamburger hamburger--elastic" @click="toggleMenu" :class="{ 'is-active': menuOpen }">
-    <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
+  <div>
+    <div class="hamburger hamburger--elastic" @click="toggleMenu" :class="{ 'is-active': menuOpen }">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
     </div>
+    <div class="fixed top-0 left-0 w-64 h-full bg-gray-800 transform -translate-x-full transition-transform duration-300 ease-in-out" :class="{ 'translate-x-0': menuOpen }"></div>
   </div>
 </template>
 
@@ -106,4 +109,5 @@ const toggleMenu = () => {
   transform: translate3d(0, -20px, 0) rotate(-270deg);
   transition-delay: 0.075s;
 }
+
 </style>
