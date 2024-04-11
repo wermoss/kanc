@@ -6,4 +6,7 @@
     html {
       font-family: Inter, system-ui, sans-serif;
     }
+  };
+  @layer body {
+    user-select: none;
   }
