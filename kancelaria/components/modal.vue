@@ -1,8 +1,11 @@
 <template>
-  <div>
-    <div @click="openModal" class="w-16 h-16 cursor-pointer	 bg-black rounded-full items-center justify-center flex fixed bottom-10 right-10">
-      <img src="/src/phone.svg" alt="Zamknij" class="w-6 h-6"/>
-    </div>
+
+<div>
+  <div @click="openModal" class="button-container"></div>
+  <img src="/src/phone.svg" alt="Zamknij" class="button"/>
+  <div class="animation"></div>
+</div>
+<div>
     <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center" style="display: none;">
       <div ref="modalBox" class="max-w-md bg-white p-10 mx-6 rounded flex flex-col bottom-0 transform translate-y-full ">
         <div @click="closeModal" class="cursor-pointer justify-end flex">
@@ -76,3 +79,46 @@ const validateInput = () => {
   phoneNumber.value = phoneNumber.value.replace(/\D/g, '')
 }
 </script>
+<style>
+.button-container {
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.button {
+  width: 24px;
+  height: 24px;
+}
+
+.animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 0, 128, 0.5);
+  border-radius: 50%;
+  animation: ping 10s infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+</style>

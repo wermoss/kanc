@@ -8,9 +8,8 @@
             </div>
         </div>
     </div>
-    <div>Sekcja korzyści</div>
+    <div class="h-[200px]">Sekcja korzyści</div>
     <Modal />
-    <div class="flex items-center justify-center bg-black"><Menu /></div>
 </template>
 
 <script></script>
