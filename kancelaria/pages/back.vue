@@ -4,8 +4,8 @@
             <div class=" h-screen flex flex-col items-center justify-center text-white">
                 <div class="container mx-auto text-xl p-4">
 
-                    <div><Subtitle /></div>aaa
-                    <div><Subtitle /></div>
+                    <div><Subtitle /></div><br><br><br>
+                    <div><Zombie /></div>
                 
                 </div>
                 

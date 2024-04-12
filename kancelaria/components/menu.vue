@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="hamburger hamburger--elastic" @click="toggleMenu" :class="{ 'is-active': menuOpen }">
-      <div class="bg-pink-200 hamburger-box">
+      <div class="hamburger-box">
         <div class="hamburger-inner"></div>
       </div>
     </div>
@@ -21,7 +21,7 @@ const toggleMenu = () => {
 
 <style scoped>
 .hamburger {
-  padding: 15px 15px;
+  padding: 0px 0px;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -34,7 +34,6 @@ const toggleMenu = () => {
   border: 0;
   margin: 0;
   overflow: visible;
-  background-color: blue;
 }
 .hamburger:hover {
   opacity: 0.7;
@@ -58,7 +57,7 @@ const toggleMenu = () => {
 .hamburger-inner {
   display: block;
   top: 50%;
-  margin-top: -2px;
+  margin-top: 2px;
 }
 .hamburger-inner,
 .hamburger-inner::before,
