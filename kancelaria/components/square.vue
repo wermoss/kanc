@@ -1,5 +1,8 @@
 <template>
-  <div id="animated-square"></div>
+  <div class="container relative">
+    <div class="text absolute z-10 opacity-0" ref="text">Kancelaria</div>
+    <div id="animated-square" class="absolute left-0 z-20" ref="square"></div>
+  </div>
 </template>
 
 <script>
@@ -7,22 +10,35 @@ import anime from 'animejs'
 
 export default {
   mounted() {
-    anime({
-      targets: '#animated-square',
-      width: ['100px', '400px'], // zmienia kwadrat w prostokąt
-      duration: 500, // czas trwania animacji w milisekundach
-      easing: 'easeInOutSine', // typ easingu
-    })
+    this.$nextTick(() => {
+      const textWidth = this.$refs.text.offsetWidth
+      this.$refs.square.style.width = `${textWidth}px`
 
-    setTimeout(() => {
       anime({
-        targets: '#animated-square',
-        width: ['400px', '0px'], // zmniejsza prostokąt do zera
-        translateX: ['0px', '400px'], // przesuwa element w prawo
-        duration: 500, // czas trwania animacji w milisekundach
-        easing: 'easeInOutSine', // typ easingu
+        targets: this.$refs.square,
+        width: ['0px', `${textWidth}px`],
+        duration: 500,
+        easing: 'cubicBezier(.47,.01,.99,.3)',
       })
-    }, 500)
+
+      setTimeout(() => {
+        anime({
+          targets: this.$refs.square,
+          width: [`${textWidth}px`, '0px'],
+          translateX: ['0px', `${textWidth}px`],
+          duration: 500,
+          easing: 'cubicBezier(.47,.01,.99,.3)',
+        })
+      }, 500)
+
+      anime({
+        targets: this.$refs.text,
+        opacity: [0, 1],
+        delay: 500, // opóźnienie 1 sekundy
+        duration: 100,
+        easing: 'cubicBezier(.47,.01,.99,.3)',
+      })
+    })
   },
 }
 </script>
@@ -30,9 +46,6 @@ export default {
 <style>
 #animated-square {
   background-color: #f00;
-  width: 100px;
   height: 100px;
-  position: absolute;
-  left: 0;
 }
 </style>
