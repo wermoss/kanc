@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="h-[200px]">Sekcja korzyści</div>
-    <Mod />
+    <Mod2 />
 </template>
 
 <script></script>
