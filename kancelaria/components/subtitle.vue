@@ -1,6 +1,6 @@
 <template>
   <div class="container relative">
-    <div class="text absolute z-10 opacity-0" ref="text">Kancelaria</div>
+    <div class="text absolute z-10 opacity-0 p-10 tracking-[1em] uppercase" ref="text">Kancelaria</div>
     <div id="animated-square" class="absolute left-0 z-20" ref="square"></div>
   </div>
 </template>
@@ -12,13 +12,15 @@ export default {
   mounted() {
     this.$nextTick(() => {
       const textWidth = this.$refs.text.offsetWidth
+      const textHeight = this.$refs.text.offsetHeight
       this.$refs.square.style.width = `${textWidth}px`
+      this.$refs.square.style.height = `${textHeight}px`
 
       anime({
         targets: this.$refs.square,
         width: ['0px', `${textWidth}px`],
-        duration: 500,
-        easing: 'cubicBezier(.47,.01,.99,.3)',
+        duration: 1000,
+        easing: 'easeInOutSine',
       })
 
       setTimeout(() => {
@@ -26,17 +28,17 @@ export default {
           targets: this.$refs.square,
           width: [`${textWidth}px`, '0px'],
           translateX: ['0px', `${textWidth}px`],
-          duration: 500,
-          easing: 'cubicBezier(.47,.01,.99,.3)',
+          duration: 1000,
+          easing: 'easeInOutSine',
         })
-      }, 500)
+      }, 1000)
 
       anime({
         targets: this.$refs.text,
         opacity: [0, 1],
-        delay: 500, // opóźnienie 1 sekundy
+        delay: 700,
         duration: 100,
-        easing: 'cubicBezier(.47,.01,.99,.3)',
+        easing: 'easeInOutSine',
       })
     })
   },
@@ -45,7 +47,6 @@ export default {
 
 <style>
 #animated-square {
-  background-color: #f00;
-  height: 100px;
+  background-color: #fff;
 }
 </style>
