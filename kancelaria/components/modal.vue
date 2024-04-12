@@ -1,11 +1,6 @@
 <template>
 
 <div>
-  <div @click="openModal" class="button-container"></div>
-  <img src="/src/phone.svg" alt="Zamknij" class="button"/>
-  <div class="animation"></div>
-</div>
-<div>
     <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center" style="display: none;">
       <div ref="modalBox" class="max-w-md bg-white p-10 mx-6 rounded flex flex-col bottom-0 transform translate-y-full ">
         <div @click="closeModal" class="cursor-pointer justify-end flex">
