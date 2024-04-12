@@ -5,18 +5,42 @@
         <div class="hamburger-inner"></div>
       </div>
     </div>
-    <div class="fixed top-0 left-0 w-64 h-full bg-gray-800 transform -translate-x-full transition-transform duration-300 ease-in-out" :class="{ 'translate-x-0': menuOpen }"></div>
+    <div class="fixed top-0 left-0 w-64 h-full bg-gray-800 transform -translate-x-full transition-transform duration-300 ease-in-out z-30" :class="{ 'translate-x-0': menuOpen }">
+      <ul ref="menuItems" class="p-8">
+        <li class="py-2">Home</li>
+        <li class="py-2">Kancelaria</li>
+        <li class="py-2">Blog</li>
+        <li class="py-2">Kontakt</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
+import anime from 'animejs'
 
 let menuOpen = ref(false)
+let menuItems = ref(null)
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
+  if (menuOpen.value) {
+    nextTick(() => {
+      anime({
+        targets: menuItems.value.children,
+        opacity: [0, 1],
+        translateX: [-100, 0], // Przesunięcie wzdłuż osi X
+        delay: anime.stagger(200), // Opóźnienie zależne od indeksu
+        easing: 'easeOutQuad',
+      })
+    })
+  }
 }
+
+onMounted(() => {
+  anime.set(menuItems.value.children, { opacity: 0 })
+})
 </script>
 
 <style scoped>
