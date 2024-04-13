@@ -6,16 +6,16 @@
                     <div :class="windowWidth <= 768 ? '' : 'hidden'"><Menu /></div>
                     <div :class="windowWidth > 768 ? '' : 'hidden'">
                         <ul class="flex gap-6">
-                            <li>
+                            <li @mouseover="dimLinks" @mouseout="resetLinks">
                                 Home
                             </li>
-                            <li>
+                            <li @mouseover="dimLinks" @mouseout="resetLinks">
                                 Kancelaria
                             </li>
-                            <li>
+                            <li @mouseover="dimLinks" @mouseout="resetLinks">
                                 Blog
                             </li>
-                            <li>
+                            <li @mouseover="dimLinks" @mouseout="resetLinks">
                                 Kontakt
                             </li>
                         </ul>
@@ -25,30 +25,43 @@
     </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      windowWidth: 0
-    };
-  },
-  mounted() {
-    this.$nextTick(() => {
-      if (typeof window !== "undefined") {
-        this.windowWidth = window.innerWidth;
-        window.addEventListener("resize", this.onResize);
-      }
-    });
-  },
-  beforeDestroy() {
-    if (typeof window !== "undefined") {
-      window.removeEventListener("resize", this.onResize);
-    }
-  },
-  methods: {
-    onResize() {
-      this.windowWidth = window.innerWidth;
-    }
-  }
-};
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import anime from 'animejs'
+
+let windowWidth = ref(0)
+
+onMounted(() => {
+  windowWidth.value = window.innerWidth
+  window.addEventListener('resize', onResize)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', onResize)
+})
+
+const onResize = () => {
+  windowWidth.value = window.innerWidth
+}
+
+const dimLinks = (event) => {
+  anime({
+    targets: 'li',
+    opacity: [{ value: 0.5, duration: 500 }],
+    easing: 'easeInOutQuad',
+  })
+  anime({
+    targets: event.target,
+    opacity: [{ value: 1, duration: 500 }],
+    easing: 'easeInOutQuad',
+  })
+}
+
+const resetLinks = () => {
+  anime({
+    targets: 'li',
+    opacity: [{ value: 1, duration: 500 }],
+    easing: 'easeInOutQuad',
+  })
+}
 </script>
