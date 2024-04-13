@@ -1,7 +1,7 @@
 <template>
     <div class="w-full flex items-center justify-center absolute py-8">
         <div class="max-w-screen-2xl w-full">
-                <div class="container mx-auto text-white flex justify-between tracking-widest">
+                <div class="container mx-auto text-white flex justify-between tracking-widest px-8">
                     <div class="">Logo Here</div>
                     <div :class="windowWidth <= 768 ? '' : 'hidden'"><Menu /></div>
                     <div :class="windowWidth > 768 ? '' : 'hidden'">
