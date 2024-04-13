@@ -9,20 +9,10 @@
       </div>
     </div>
   </div>
-  <div class="h-[200px]">Sekcja korzyści</div>
-  <Scale v-if="showScale" />
+  <div class="h-[200px]"><Modal /></div>
+  
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
 
-const showScale = ref(false)
-
-onMounted(() => {
-  setTimeout(() => {
-    showScale.value = true
-  }, 5000) // Opóźnienie 5 sekund
-})
-</script>
 
 <style></style>

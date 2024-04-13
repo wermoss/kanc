@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed bottom-20 right-20">
+    <div @click="closeModal" class="fixed bottom-20 right-20">
       <div ref="animatedDiv1" class="absolute bg-black h-16 w-16 rounded-full"></div>
       <div ref="animatedDiv2" class="absolute bg-black h-16 w-16 rounded-full"></div>
       <div class="absolute bg-black h-16 w-16 p-5 rounded-full flex items-center justify-center">

@@ -13,6 +13,9 @@
                                 Kancelaria
                             </li>
                             <li @mouseover="dimLinks" @mouseout="resetLinks">
+                                Zakres usług
+                            </li>
+                            <li @mouseover="dimLinks" @mouseout="resetLinks">
                                 Blog
                             </li>
                             <li @mouseover="dimLinks" @mouseout="resetLinks">
@@ -47,12 +50,12 @@ const onResize = () => {
 const dimLinks = (event) => {
   anime({
     targets: 'li',
-    opacity: [{ value: 0.5, duration: 500 }],
+    opacity: [{ value: 0.5, duration: 300 }],
     easing: 'easeInOutQuad',
   })
   anime({
     targets: event.target,
-    opacity: [{ value: 1, duration: 500 }],
+    opacity: [{ value: 1, duration: 300 }],
     easing: 'easeInOutQuad',
   })
 }
@@ -60,7 +63,7 @@ const dimLinks = (event) => {
 const resetLinks = () => {
   anime({
     targets: 'li',
-    opacity: [{ value: 1, duration: 500 }],
+    opacity: [{ value: 1, duration: 300 }],
     easing: 'easeInOutQuad',
   })
 }
