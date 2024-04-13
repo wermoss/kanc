@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="h-[200px]">Sekcja korzyści</div>
-    <Mod2 />
+    <Scale />
 </template>
 
 <script></script>
