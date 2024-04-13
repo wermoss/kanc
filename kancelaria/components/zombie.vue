@@ -1,6 +1,6 @@
 <template>
     <div class="container relative">
-      <div class="text absolute z-10 opacity-0 p-10 tracking-[1em] uppercase font-bitter" ref="text">Jestesmy z toba</div>
+      <div class="text-xl md:text-6xl absolute z-10 opacity-0 p-2 tracking-wider" ref="text">Zawsze po Twojej stronie ...</div>
       <div id="animated-square" class="absolute left-0 z-20" ref="square"></div>
     </div>
   </template>
