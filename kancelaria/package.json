@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@dargmuesli/nuxt-cookie-control": "^8.1.2",
     "@gtm-support/vue-gtm": "^2.2.0",
     "@vercel/speed-insights": "^1.0.10",
     "@vueuse/sound": "^2.0.1",

@@ -10,6 +10,7 @@
     </div>
   </div>
   <div class="h-[200px]"><Modal /></div>
+
   
 </template>
 
