@@ -4,13 +4,13 @@
       <div class="animation"></div>
       <img src="/src/phone.svg" alt="Phone" class="button"/>
     </div>
-    <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center" style="display: none;">
-      <div ref="modalBox" class="max-w-md bg-white p-10 mx-6 rounded flex flex-col bottom-0 transform translate-y-full ">
+    <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center text-center	" style="display: none;">
+      <div ref="modalBox" class="max-w-md bg-white p-8 mx-8 rounded flex flex-col bottom-0 transform translate-y-full ">
         <div @click="closeModal" class="cursor-pointer justify-end flex">
           <img src="/src/close.svg" alt="Zamknij" class="w-6 h-6" />
         </div>
-        <h2 class="text-xl my-6">Podaj numer telefonu a my oddzwonimy do Ciebie w ciągu kilkudziesieciu sekund z bezpłatną konsultacją prawną.</h2>
-        <p>Jesteś 2 osobą, która zamawia dzisiaj rozmowę.</p>
+        <h2 class="text-md my-6 ">Podaj numer telefonu a my oddzwonimy do Ciebie w ciągu kilkudziesieciu sekund z bezpłatną konsultacją prawną.</h2>
+        <p class="text-xs pb-2">Jesteś 2 osobą, która zamawia dzisiaj rozmowę.</p>
         <form class="max-w-sm mx-auto">
           <div class="flex">
             <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-sm dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -19,7 +19,7 @@
             <input type="tel" v-model="phoneNumber" @input="validateInput" maxlength="9" pattern="\d{9}" class="rounded-none rounded-e-sm bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="450 066 055">
           </div>
           <button :disabled="phoneNumber.length !== 9" :class="{ 'opacity-50': phoneNumber.length !== 9 }" class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Zamów rozmowę</button>
-          <p>Numer telefony będzie przetworzony jednorazowo wyłacznie w celu realizacji połaczenia</p>
+          <p class="text-xs pt-4">Numer telefonu będzie przetworzony jednorazowo wyłacznie w celu realizacji połaczenia</p>
         </form>
       </div>
     </div>
