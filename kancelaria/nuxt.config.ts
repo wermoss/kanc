@@ -33,19 +33,21 @@ export default defineNuxtConfig({
       ],
       optional: [
         {
-          id: 'o',
-          name: 'Optional Cookie',
-          links: {
-            '/': 'Local Privacy Policy',
-            'https://example.com': '3rd Party Privacy Policy',
-            'https://example.cop': null,
+          id: 'gtm',
+          name: 'Google Tag Manager',
+          onChanged: (enabled) => {
+            if (process.client) {
+              window['dataLayer'] = window['dataLayer'] || [];
+              window['dataLayer'].push({
+                'gtm.start': new Date().getTime(),
+                event: enabled ? 'gtm.js' : 'gtm.blocked'
+              });
+            }
           },
-          targetCookieIds: ['_o', '_p', '_t'],
         },
       ],
     },
     isCookieIdVisible: true,
-    isIframeBlocked: true,
     locales: ['en', 'de'],
     localeTexts: {
       de: {
