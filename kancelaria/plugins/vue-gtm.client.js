@@ -10,5 +10,6 @@ export default defineNuxtPlugin((nuxtApp) => {
         loadScript: true, // Whether or not to load the GTM Script (Helpful if you are including GTM manually, but need the dataLayer functionality in your components) (optional)
         vueRouter: useRouter(), // Pass the router instance to automatically sync with router (optional)
         trackOnNextTick: false, // Whether or not call trackView in Vue.nextTick
+        autoInit: false,
     }))
 })

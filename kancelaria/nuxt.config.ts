@@ -17,33 +17,12 @@ export default defineNuxtConfig({
     },
     closeModalOnClickOutside: true,
     cookies: {
-      necessary: [
-        {
-          description: {
-            de: 'Dieser Cookie tut etwas.',
-            en: 'This cookie does something very very very very very very very long.',
-          },
-          id: 'n',
-          name: {
-            de: 'Notwendiger Cookie',
-            en: 'Necessary Cookie',
-          },
-          targetCookieIds: ['NEC'],
-        },
-      ],
+
       optional: [
         {
-          id: 'gtm',
           name: 'Google Tag Manager',
-          onChanged: (enabled) => {
-            if (process.client) {
-              window['dataLayer'] = window['dataLayer'] || [];
-              window['dataLayer'].push({
-                'gtm.start': new Date().getTime(),
-                event: enabled ? 'gtm.js' : 'gtm.blocked'
-              });
-            }
-          },
+          id: 'gtm',
+          targetCookieIds: ['_ga', 'aaa'],
         },
       ],
     },
