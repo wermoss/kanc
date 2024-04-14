@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@gtm-support/vue-gtm": "^2.2.0",
     "@vercel/speed-insights": "^1.0.10",
     "@vueuse/sound": "^2.0.1",
     "animejs": "^3.2.2",
