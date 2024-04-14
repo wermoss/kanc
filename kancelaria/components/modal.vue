@@ -4,7 +4,7 @@
       <div class="animation"></div>
       <img src="/src/phone.svg" alt="Phone" class="button"/>
     </div>
-    <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center text-center	" style="display: none;">
+    <div ref="modalBg" class="fixed inset-0 bg-black bg-opacity-0 flex items-center justify-center text-center z-50" style="display: none;">
       <div ref="modalBox" class="max-w-md bg-white p-8 mx-8 rounded flex flex-col bottom-0 transform translate-y-full ">
         <div @click="closeModal" class="cursor-pointer justify-end flex">
           <img src="/src/close.svg" alt="Zamknij" class="w-6 h-6" />
