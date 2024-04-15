@@ -1,10 +1,5 @@
+
 export default defineNuxtConfig({
-  runtimeConfig: {
-    public: {
-      gtm_id: 'GTM-59LPWQ79',
-      gtm_status: true,
-    }
-  },
   app: {
     head: {
       title: 'Playground',
@@ -15,27 +10,19 @@ export default defineNuxtConfig({
     includeWorkspace: true,
   },
 
-  // Cookie Control - Module options
+  // module options
   cookieControl: {
-    cookieNameIsConsentGiven: 'cookie_control_consent',
-    cookieNameCookiesEnabledIds: 'cookie_control_enabled',
     colors: {
-      checkboxActiveBackground: '#00A34A',
+      checkboxActiveBackground: '#00A34A', // text-green-600
     },
     closeModalOnClickOutside: true,
     cookies: {
-      necessary: [
-        {
-          name: 'Default cookies',
-          id: 'default',
-          targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled'],
-        },
-      ],
+      necessary: [],
       optional: [
         {
           name: 'Google Tag Manager',
           id: 'gtm',
-          targetCookieIds: ['_ga', '_ga_5FK73WVJ8L'],
+          targetCookieIds: ['_ga'],
         },
       ],
     },
@@ -47,8 +34,9 @@ export default defineNuxtConfig({
       },
     },
   },
-
-  css: [
-    '~/assets/css/global.css'
-  ],
 })
+//   css: [
+//     '~/assets/css/global.css'
+//   ],
+  
+// })
