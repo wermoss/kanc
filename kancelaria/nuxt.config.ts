@@ -15,14 +15,22 @@ export default defineNuxtConfig({
     includeWorkspace: true,
   },
 
-  // module options
+  // Cookie Control - Module options
   cookieControl: {
+    cookieNameIsConsentGiven: 'cookie_control_consent',
+    cookieNameCookiesEnabledIds: 'cookie_control_enabled',
     colors: {
-      checkboxActiveBackground: '#00A34A', // text-green-600
+      checkboxActiveBackground: '#00A34A',
     },
     closeModalOnClickOutside: true,
     cookies: {
-      necessary: [],
+      necessary: [
+        {
+          name: 'Default cookies',
+          id: 'default',
+          targetCookieIds: ['cookie_control_consent', 'cookie_control_enabled'],
+        },
+      ],
       optional: [
         {
           name: 'Google Tag Manager',
@@ -39,9 +47,8 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  css: [
+    '~/assets/css/global.css'
+  ],
 })
-//   css: [
-//     '~/assets/css/global.css'
-//   ],
-  
-// })
