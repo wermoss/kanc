@@ -5,6 +5,7 @@
     <div>
       
       <div><CookieControl /></div>
+      <div><Geolocation /></div>
 
     </div>
   </div>
