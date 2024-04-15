@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Playground',
+      meta: [
+        { hid: 'robots', name: 'robots', content: 'noindex' }
+      ]
     },
   },
   modules: ['@dargmuesli/nuxt-cookie-control', '@nuxtjs/tailwindcss'],
