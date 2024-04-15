@@ -1,5 +1,10 @@
-
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      gtm_id: 'GTM-59LPWQ79',
+      gtm_status: true,
+    }
+  },
   app: {
     head: {
       title: 'Playground',
@@ -17,12 +22,12 @@ export default defineNuxtConfig({
     },
     closeModalOnClickOutside: true,
     cookies: {
-
+      necessary: [],
       optional: [
         {
           name: 'Google Tag Manager',
           id: 'gtm',
-          targetCookieIds: ['_ga', 'aaa'],
+          targetCookieIds: ['_ga', '_ga_5FK73WVJ8L'],
         },
       ],
     },
