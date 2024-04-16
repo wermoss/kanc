@@ -2,7 +2,7 @@
   <div class="w-full flex items-center">
     <div class="w-screen h-screen flex items-center justify-center">
       <div>
-        <h1>Version: 1.0.2</h1>
+        <h1>Version: 1.0.3</h1>
         <div>
           <CookieControl />
         </div>
@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+
 const {
   cookiesEnabled,
   cookiesEnabledIds,
@@ -27,9 +28,9 @@ const {
 watch(
     () => cookiesEnabledIds.value,
     (current, previous) => {
-      if (current?.includes('_ga') !== previous?.includes('_ga')) {
+      if (current?.includes('gtm') !== previous?.includes('gtm')) {
         const eraseCookie = (name) => {
-          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.lexxo.vercel.app;';
         };
         console.log(current);
         eraseCookie('_ga');

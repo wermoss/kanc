@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       optional: [
         {
           name: 'Google Tag Manager',
-          id: '_ga',
+          id: 'gtm',
           targetCookieIds: ['_ga', '_ga_5FK73WVJ8L'],
         },
       ],
