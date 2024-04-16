@@ -3,7 +3,10 @@ import { createGtm } from '@gtm-support/vue-gtm';
 export default defineNuxtPlugin((nuxtApp) => {
     const cookieControl = useCookieControl()
 
-    console.log('isEnabled', !!cookieControl.cookiesEnabledIds.value?.includes('_ga'))
+    if (!cookieControl.cookiesEnabledIds.value?.includes('_ga')) {
+        console.log('nie robię !!!')
+        return;
+    }
 
     nuxtApp.vueApp.use(createGtm({
         id: 'GTM-59LPWQ79',
