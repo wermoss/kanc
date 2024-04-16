@@ -25,6 +25,10 @@ export default defineNuxtConfig({
                     name: 'Google Tag Manager',
                     id: 'gtm',
                     targetCookieIds: [ '_ga', '_ga-<token>' ],
+                    cookies: [ '_ga', '_ga_5FK73WVJ8L' ],
+                    accepted: () => {
+                        console.log('Google Tag Manager accepted');
+                    },
                 },
             ],
         },
