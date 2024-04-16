@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       ]
     },
   },
-  modules: ['@dargmuesli/nuxt-cookie-control', '@nuxtjs/tailwindcss'],
+  modules: ['@dargmuesli/nuxt-cookie-control', '@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   typescript: {
     includeWorkspace: true,
   },
