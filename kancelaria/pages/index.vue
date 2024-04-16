@@ -29,7 +29,7 @@ watch(
     () => cookiesEnabledIds.value,
     (current, previous) => {
       const eraseCookie = (name) => {
-        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.lexxo.vercel.app;';
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.lexxo.vercel.app;Max-Age=0;';
       };
       console.log(current);
       eraseCookie('_ga');
