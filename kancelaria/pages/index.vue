@@ -6,6 +6,7 @@
       
       <div><CookieControl /></div>
       <div><Geolocation /></div>
+      <div><Browser /></div>
 
     </div>
   </div>
