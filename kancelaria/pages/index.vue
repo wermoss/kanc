@@ -5,8 +5,8 @@
     <div>
       
       <div><CookieControl /></div>
-      <div><Geolocation /></div>
-      <div><Browser /></div>
+<!--      <div><Geolocation /></div>-->
+<!--      <div><Browser /></div>-->
 
     </div>
   </div>
@@ -26,7 +26,7 @@ const {
 watch(
   () => cookiesEnabledIds.value,
   (current, previous) => {
-    if (current?.includes('gtm') !== previous?.includes('gtm')) {
+    if (current?.includes('_ga') !== previous?.includes('_ga')) {
       // cookie with id `google-analytics` got added
       window.location.reload() // placeholder for your custom change handler
     }
