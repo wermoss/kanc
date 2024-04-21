@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     ],
     gtag: {
         id: 'G-5FK73WVJ8L',
+        enabled: false,
         initCommands: [
             // Setup up consent mode
             [ 'consent', 'default', {

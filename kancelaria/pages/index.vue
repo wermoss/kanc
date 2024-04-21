@@ -2,7 +2,7 @@
   <div class="w-full flex items-center">
     <div class="w-screen h-screen flex items-center justify-center">
       <div>
-        <h1>Version: 1.0.5</h1>
+        <h1>Version: 1.0.6</h1>
         <div>
           <CookieControl />
         </div>
@@ -34,12 +34,22 @@ function allConsentGranted() {
   });
 }
 
-allConsentGranted();
-
 // example: react to a cookie being accepted
 watch(
     () => cookiesEnabledIds.value,
     (current, previous) => {
+      console.log(current.gtm);
+
+      if (current.gtm) {
+        const { gtag, initialize } = useGtag();
+        console.log(gtag);
+        initialize();
+        console.log('Google Tag Manager cookie accepted');
+        allConsentGranted();
+      } else {
+        console.log('Google Tag Manager cookie not accepted');
+      }
+
       const eraseCookie = (name) => {
         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.lexxo.vercel.app;Max-Age=0;';
       };
