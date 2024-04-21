@@ -2,7 +2,7 @@
   <div class="w-full flex items-center">
     <div class="w-screen h-screen flex items-center justify-center">
       <div>
-        <h1>Version: 1.0.6</h1>
+        <h1>Version: 1.0.7</h1>
         <div>
           <CookieControl />
         </div>
@@ -38,9 +38,10 @@ function allConsentGranted() {
 watch(
     () => cookiesEnabledIds.value,
     (current, previous) => {
-      console.log(current.gtm);
+      console.log(current);
+      console.log(previous);
 
-      if (current.gtm) {
+      if (current?.includes('gtm')) {
         const { gtag, initialize } = useGtag();
         console.log(gtag);
         initialize();
