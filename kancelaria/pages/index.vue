@@ -47,8 +47,8 @@ watch(
         initialize();
         allConsentGranted();
       } else {
-        // eraseCookie('_ga');
-        // eraseCookie('_ga_5FK73WVJ8L');
+        eraseCookie('_ga');
+        eraseCookie('_ga_5FK73WVJ8L');
       }
 
       // cookie with id `google-analytics` got added
