@@ -7,7 +7,25 @@ export default defineNuxtConfig({
             ],
         },
     },
-    modules: [ '@dargmuesli/nuxt-cookie-control', '@nuxtjs/tailwindcss', '@nuxtjs/i18n' ],
+    modules: [
+        '@dargmuesli/nuxt-cookie-control',
+        '@nuxtjs/tailwindcss',
+        '@nuxtjs/i18n',
+        'nuxt-gtag',
+    ],
+    gtag: {
+        id: 'G-5FK73WVJ8L',
+        initCommands: [
+            // Setup up consent mode
+            [ 'consent', 'default', {
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                ad_storage: 'denied',
+                analytics_storage: 'denied',
+                wait_for_update: 500,
+            } ],
+        ],
+    },
     typescript: {
         includeWorkspace: true,
     },

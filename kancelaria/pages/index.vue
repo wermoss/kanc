@@ -24,6 +24,18 @@ const {
   moduleOptions,
 } = useCookieControl();
 
+function allConsentGranted() {
+  const { gtag } = useGtag();
+  gtag('consent', 'update', {
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    ad_storage: 'granted',
+    analytics_storage: 'granted',
+  });
+}
+
+allConsentGranted();
+
 // example: react to a cookie being accepted
 watch(
     () => cookiesEnabledIds.value,
@@ -31,7 +43,6 @@ watch(
       const eraseCookie = (name) => {
         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.lexxo.vercel.app;Max-Age=0;';
       };
-      console.log(current);
       eraseCookie('_ga');
       eraseCookie('_ga_5FK73WVJ8L');
       // cookie with id `google-analytics` got added
