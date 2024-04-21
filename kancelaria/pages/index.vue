@@ -2,7 +2,7 @@
   <div class="w-full flex items-center">
     <div class="w-screen h-screen flex items-center justify-center">
       <div>
-        <h1>Version: 1.0.7</h1>
+        <h1>Version: 1.0.8</h1>
         <div>
           <CookieControl />
         </div>
@@ -34,28 +34,23 @@ function allConsentGranted() {
   });
 }
 
+const eraseCookie = (name) => {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.lexxo.vercel.app;Max-Age=0;';
+};
+
 // example: react to a cookie being accepted
 watch(
     () => cookiesEnabledIds.value,
-    (current, previous) => {
-      console.log(current);
-      console.log(previous);
-
+    (current) => {
       if (current?.includes('gtm')) {
-        const { gtag, initialize } = useGtag();
-        console.log(gtag);
+        const { initialize } = useGtag();
         initialize();
-        console.log('Google Tag Manager cookie accepted');
         allConsentGranted();
       } else {
-        console.log('Google Tag Manager cookie not accepted');
+        // eraseCookie('_ga');
+        // eraseCookie('_ga_5FK73WVJ8L');
       }
 
-      const eraseCookie = (name) => {
-        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.lexxo.vercel.app;Max-Age=0;';
-      };
-      eraseCookie('_ga');
-      eraseCookie('_ga_5FK73WVJ8L');
       // cookie with id `google-analytics` got added
       window.location.reload(); // placeholder for your custom change handler
     },
