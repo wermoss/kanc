@@ -2,7 +2,7 @@
   <div class="w-full flex items-center">
     <div class="w-screen h-screen flex items-center justify-center">
       <div>
-        <h1>Version: 1.0.9</h1>
+        <h1>Version: 1.0.10</h1>
         <div>
           <CookieControl />
         </div>
@@ -43,6 +43,9 @@ watch(
   () => cookiesEnabledIds.value,
   (current) => {
     console.log(current);
+
+    eraseCookie("_ga");
+    eraseCookie("_ga_5FK73WVJ8L");
 
     const { initialize, gtag } = useGtag();
 
