@@ -56,36 +56,24 @@ export default defineNuxtConfig({
           id: "user-data",
           targetCookieIds: ["_ga", "_ga-<token>"],
           cookies: ["_ga", "_ga_5FK73WVJ8L"],
-          accepted: () => {
-            console.log("Google Tag Manager accepted");
-          },
         },
         {
           name: "Personalization",
           id: "personalization",
           targetCookieIds: ["_ga", "_ga-<token>"],
           cookies: ["_ga", "_ga_5FK73WVJ8L"],
-          accepted: () => {
-            console.log("Google Tag Manager accepted");
-          },
         },
         {
           name: "Storage",
           id: "storage",
           targetCookieIds: ["_ga", "_ga-<token>"],
           cookies: ["_ga", "_ga_5FK73WVJ8L"],
-          accepted: () => {
-            console.log("Google Tag Manager accepted");
-          },
         },
         {
           name: "Analytics",
           id: "analytics",
           targetCookieIds: ["_ga", "_ga-<token>"],
           cookies: ["_ga", "_ga_5FK73WVJ8L"],
-          accepted: () => {
-            console.log("Google Tag Manager accepted");
-          },
         },
       ],
     },

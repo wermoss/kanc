@@ -2,7 +2,7 @@
   <div class="w-full flex items-center">
     <div class="w-screen h-screen flex items-center justify-center">
       <div>
-        <h1>Version: 1.0.10</h1>
+        <h1>Version: 1.0.11</h1>
         <div>
           <CookieControl />
         </div>
@@ -51,25 +51,30 @@ watch(
 
     initialize();
 
-    const permissions = {};
+    // if (current?.includes("user-data")) {
+    //   permissions.ad_user_data = "granted";
+    // }
 
-    if (current?.includes("user-data")) {
-      permissions.ad_user_data = "granted";
-    }
+    // if (current?.includes("personalization")) {
+    //   permissions.ad_personalization = "granted";
+    // }
 
-    if (current?.includes("personalization")) {
-      permissions.ad_personalization = "granted";
-    }
+    // if (current?.includes("storage")) {
+    //   permissions.ad_storage = "granted";
+    // }
 
-    if (current?.includes("storage")) {
-      permissions.ad_storage = "granted";
-    }
+    // if (current?.includes("analytics")) {
+    //   permissions.analytics_storage = "granted";
+    // }
 
-    if (current?.includes("analytics")) {
-      permissions.analytics_storage = "granted";
-    }
-
-    gtag("consent", "update", permissions);
+    gtag("consent", "update", {
+      ad_user_data: current?.includes("user-data") ? "granted" : "denied",
+      ad_personalization: current?.includes("personalization")
+        ? "granted"
+        : "denied",
+      ad_storage: current?.includes("storage") ? "granted" : "denied",
+      analytics_storage: current?.includes("analytics") ? "granted" : "denied",
+    });
 
     // if (current?.includes("gtm")) {
     //   const { initialize } = useGtag();
