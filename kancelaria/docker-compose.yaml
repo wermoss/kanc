@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  kancelaria:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4444:3000"
+    volumes:
+      - .:/app
