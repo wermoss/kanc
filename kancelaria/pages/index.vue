@@ -2,7 +2,7 @@
   <div class="w-full flex items-center">
     <div class="w-screen h-screen flex items-center justify-center">
       <div>
-        <h1>Version: 1.0.11</h1>
+        <h1>Version: 1.0.12</h1>
         <div>
           <CookieControl />
         </div>
@@ -44,9 +44,6 @@ watch(
   (current) => {
     console.log(current);
 
-    eraseCookie("_ga");
-    eraseCookie("_ga_5FK73WVJ8L");
-
     const { initialize, gtag } = useGtag();
 
     initialize();
@@ -63,6 +60,11 @@ watch(
         ? "granted"
         : "denied",
     });
+
+    if (!current?.includes("storage-and-analytics")) {
+      eraseCookie("_ga");
+      eraseCookie("_ga_5FK73WVJ8L");
+    }
 
     // cookie with id `google-analytics` got added
     window.location.reload(); // placeholder for your custom change handler
