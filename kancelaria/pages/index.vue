@@ -51,39 +51,18 @@ watch(
 
     initialize();
 
-    // if (current?.includes("user-data")) {
-    //   permissions.ad_user_data = "granted";
-    // }
-
-    // if (current?.includes("personalization")) {
-    //   permissions.ad_personalization = "granted";
-    // }
-
-    // if (current?.includes("storage")) {
-    //   permissions.ad_storage = "granted";
-    // }
-
-    // if (current?.includes("analytics")) {
-    //   permissions.analytics_storage = "granted";
-    // }
-
     gtag("consent", "update", {
       ad_user_data: current?.includes("user-data") ? "granted" : "denied",
       ad_personalization: current?.includes("personalization")
         ? "granted"
         : "denied",
-      ad_storage: current?.includes("storage") ? "granted" : "denied",
-      analytics_storage: current?.includes("analytics") ? "granted" : "denied",
+      ad_storage: current?.includes("storage-and-analytics")
+        ? "granted"
+        : "denied",
+      analytics_storage: current?.includes("storage-and-analytics")
+        ? "granted"
+        : "denied",
     });
-
-    // if (current?.includes("gtm")) {
-    //   const { initialize } = useGtag();
-    //   initialize();
-    //   allConsentGranted();
-    // } else {
-    //   eraseCookie("_ga");
-    //   eraseCookie("_ga_5FK73WVJ8L");
-    // }
 
     // cookie with id `google-analytics` got added
     window.location.reload(); // placeholder for your custom change handler

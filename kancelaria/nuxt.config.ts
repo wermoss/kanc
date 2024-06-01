@@ -64,14 +64,8 @@ export default defineNuxtConfig({
           cookies: ["_ga", "_ga_5FK73WVJ8L"],
         },
         {
-          name: "Storage",
-          id: "storage",
-          targetCookieIds: ["_ga", "_ga-<token>"],
-          cookies: ["_ga", "_ga_5FK73WVJ8L"],
-        },
-        {
-          name: "Analytics",
-          id: "analytics",
+          name: "Storage and Analytics",
+          id: "storage-and-analytics",
           targetCookieIds: ["_ga", "_ga-<token>"],
           cookies: ["_ga", "_ga_5FK73WVJ8L"],
         },
